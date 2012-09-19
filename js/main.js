@@ -44,6 +44,7 @@ function initObject(){
         var tex = new THREE.Texture(img);
         var mat = new THREE.MeshBasicMaterial({color:0xffffff, map:tex});
         materials.push(mat);
+        var num = 1;
     }
     for(i = 0 ; i < 1 ; i++){
         
