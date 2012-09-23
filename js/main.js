@@ -82,38 +82,15 @@ function loop() {
 	renderer.render(scene, camera);
 	window.requestAnimationFrame(loop);
 }
-function switchCube(num){
-    b = 10;
-    console.log(1^b);
-    for(var i = 0 ;i< 3 ; i++){
-        var per = Math.PI*2;
+
+var per_arr = [[1,1,1],[3,3,1],[3,0,0],[3,2,2],[0,0,0],[2,0,2]];
+function switchCube(){
+    num = Math.floor(Math.random()*6);
+    for(var i = 0 ;i < 3 ; i++){
+        var per = Math.PI * 2;
         var ro_num = Math.floor(Math.random()*10);
-        switch(num){
-            case 1:
-                to_cube_rotation_arr[i] = [per*ro_num - per*1/4,per*ro_num - per*1/4,per*ro_num - per*1/4];
-                to_camera_dir_arr = [0,0,600];
-            break;
-            case 2:
-                to_cube_rotation_arr[i] = [per*ro_num - per*3/4,per*ro_num - per*3/4,per*ro_num - per*1/4];
-                to_camera_dir_arr = [0,0,600];
-            break;
-            case 3:
-                to_cube_rotation_arr[i] = [per*ro_num - per*3/4,per*ro_num - per*0/4,per*ro_num - per*0/4];
-                to_camera_dir_arr = [0,0,600];
-            break;
-            case 4:
-                to_cube_rotation_arr[i] = [per*ro_num - per*3/4,per*ro_num - per*2/4,per*ro_num - per*2/4];
-                to_camera_dir_arr = [0,0,600];
-            break;
-            case 5:
-                to_cube_rotation_arr[i] = [per*ro_num - per*0/4,per*ro_num - per*0/4,per*ro_num - per*0/4];
-                to_camera_dir_arr = [0,0,600];
-            break;
-            case 6:
-                to_cube_rotation_arr[i] = [per*ro_num - per*2/4,per*ro_num - per*0/4,per*ro_num - per*2/4];
-                to_camera_dir_arr = [0,0,600];
-            break;
-        }    
+        to_cube_rotation_arr[i] = [per*ro_num - per* per_arr[num][0] /4,per*ro_num - per* per_arr[num][1] /4,per*ro_num - per* per_arr[num][2] /4];
+        to_camera_dir_arr = [0,0,800];
     }
 }
 

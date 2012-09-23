@@ -1,13 +1,21 @@
 body{
-	background-image: url("../img/background.gif");
+	margin:0;
 }
-
+#wrapper{
+	margin:0 auto;
+	width:960px;
+}
 #canvas_frame{
 	margin:0 auto;
-    width: 1200px;
+    width: 960px;
     height: 500px;
+    position: fixed;
+    z-index: 3;
 }
-canvas{
-	width:1200px;
-	height: 500px;
+#str_btn{
+	z-index:4;
+	position: fixed;
+	left:50%;
+	bottom: 200px;
+	width:200px;
 }
